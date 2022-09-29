@@ -194,7 +194,7 @@ section {
   padding-right: 18rem;
 }
 .header-content .right-header .name {
-  font-size: 4rem;
+  font-size: 6rem;
 }
 .header-content .right-header .name span {
   color: var(--color-secondary);
@@ -359,7 +359,7 @@ section {
   text-align: auto;
   padding: 1rem 0;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: var(--color-secondary)
 }
@@ -387,7 +387,8 @@ section {
   width: 100%;
   height: 50%;
   object-fit: cover;
-  border-radius: 15px;
+  padding: 5%;
+  border-radius: 50px;
 }
 .portfolios .portfolio-item .hover-items {
   width: 100%;
@@ -454,12 +455,21 @@ section {
 }
 .contact-content-con .left-contact h4 {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 3rem;
   text-transform: uppercase;
+  color: var(--color-secondary);
+}
+.contact-content-con .left-contact h7 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  line-height: 2rem;
+  color: var(--color-secondary);
 }
 .contact-content-con .left-contact p {
-  margin: 1rem 0;
+  margin: 2rem 0;
+  text-transform: uppercase;
   line-height: 2rem;
+  font-size: 1rem;
 }
 .contact-content-con .left-contact .contact-info .contact-item {
   display: flex;
@@ -882,4 +892,3 @@ section {
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
