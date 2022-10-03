@@ -194,7 +194,7 @@ section {
   padding-right: 18rem;
 }
 .header-content .right-header .name {
-  font-size: 6rem;
+  font-size: 4rem;
 }
 .header-content .right-header .name span {
   color: var(--color-secondary);
@@ -240,7 +240,7 @@ section {
   color: var(--color-secondary);
 }
 .about-container .right-about .about-item .abt-text .small-text {
-  padding-left: 3rem;
+  padding-left: 2rem;
   position: relative;
   text-transform: uppercase;
   font-size: 1.2rem;
@@ -262,11 +262,11 @@ section {
 .about-container .left-about p {
   line-height: 2rem;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--color-grey-1);
 }
 .about-container .left-about h4 {
-  font-size: 3rem;
+  font-size: 2rem;
   text-transform: uppercase;
   color: var(--color-secondary)
 }
@@ -351,7 +351,7 @@ section {
   text-align: center;
   padding: 2rem 0;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 
@@ -359,7 +359,7 @@ section {
   text-align: auto;
   padding: 1rem 0;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--color-secondary)
 }
@@ -387,7 +387,7 @@ section {
   width: 100%;
   height: 50%;
   object-fit: cover;
-  padding: 5%;
+  padding: 10px;
   border-radius: 50px;
 }
 .portfolios .portfolio-item .hover-items {
@@ -892,3 +892,4 @@ section {
   }
 }
 
+/*# sourceMappingURL=styles.css.map */
