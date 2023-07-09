@@ -274,68 +274,35 @@ section {
 .about-stats {
   padding-bottom: 4rem;
 }
-.about-stats .progress-bars {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+
+.skills-list {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem; 
+  margin-bottom: 10vh;
 }
-.about-stats .progress-bars .progress-bar {
+
+.skills-list li {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  margin-bottom: 1vh;
+
 }
-.about-stats .progress-bars .progress-bar .prog-title {
-  text-transform: uppercase;
-  font-weight: 500;
+
+.skill-title, .skill-experience {
+  margin: 0 10px; 
 }
-.about-stats .progress-bars .progress-bar .progress-con {
-  display: flex;
-  align-items: center;
-}
-.about-stats .progress-bars .progress-bar .progress-con .prog-text {
-  color: var(--color-grey-2);
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress {
-  width: 100%;
-  height: 0.45rem;
-  background-color: var(--color-grey-4);
-  margin-left: 1rem;
-  position: relative;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background-color: var(--color-secondary);
-  transition: all 0.4s ease-in-out;
-  width: 60%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .html {
-  width: 80%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .css {
-  width: 95%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .js {
-  width: 75%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .react {
-  width: 60%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .node {
-  width: 87%;
-}
-.about-stats .progress-bars .progress-bar .progress-con .progress .python {
-  width: 70%;
-}
+
 
 .stat-title {
   text-transform: uppercase;
-  font-size: 1.4rem;
+  font-size: 2.5rem;
   text-align: center;
   padding: 3.5rem 0;
   position: relative;
 }
+
 .stat-title::before {
   content: "";
   position: absolute;
@@ -759,6 +726,7 @@ section {
     font-size: 2.3rem;
   }
 }
+
 @media screen and (max-width: 1432px) {
   .container {
     padding: 7rem 11rem;
@@ -789,6 +757,7 @@ section {
     font-size: 5.5rem;
   }
 }
+
 @media screen and (max-width: 1250px) {
   .blogs {
     grid-template-columns: repeat(2, 1fr);
@@ -803,6 +772,7 @@ section {
     padding-right: 9rem;
   }
 }
+
 @media screen and (max-width: 660px) {
   .blogs {
     grid-template-columns: repeat(1, 1fr);
@@ -812,6 +782,7 @@ section {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
 @media screen and (max-width: 1070px) {
   .about-container {
     grid-template-columns: repeat(1, 1fr);
@@ -830,6 +801,7 @@ section {
     font-size: 4.5rem;
   }
 }
+
 @media screen and (max-width: 970px) {
   .container {
     padding: 7rem 6rem;
@@ -864,6 +836,7 @@ section {
     padding-top: 3rem;
   }
 }
+
 @media screen and (max-width: 700px) {
   .container {
     padding: 7rem 3rem;
@@ -892,4 +865,3 @@ section {
   }
 }
 
-/*# sourceMappingURL=styles.css.map */
