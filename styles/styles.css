@@ -191,10 +191,11 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-right: 18rem;
+  padding-right: 17rem;
+  margin-left: -4vw;
 }
 .header-content .right-header .name {
-  font-size: 4rem;
+  font-size: 3.9rem;
 }
 .header-content .right-header .name span {
   color: var(--color-secondary);
