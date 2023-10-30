@@ -9,7 +9,6 @@ html {
   scroll-behavior: smooth;
 }
 
-
 :root {
   --color-primary: #191d2b;
   --color-opposite: #FFFFFF;
@@ -111,8 +110,8 @@ section {
   padding: 1rem;
   cursor: pointer;
   background-color: var(--color-grey-4);
-  width: 5rem;
-  height: 5rem;
+  width: 5vw;
+  height: 5vw;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -134,10 +133,10 @@ section {
 }
 
 .theme-btn {
-  top: 5%;
-  right: 3%;
-  width: 6rem;
-  height: 6rem;
+  top: 5vh;
+  right: 3vw;
+  width: 6vw;
+  height: 6vw;
   border-radius: 50%;
   background-color: var(--color-grey-4);
   cursor: pointer;
