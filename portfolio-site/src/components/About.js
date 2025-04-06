@@ -6,19 +6,30 @@ function About() {
       <div className="main-title">
         <h2>About <span>me</span></h2>
       </div>
-      <div className="about-container">
-        <div className="left-about">
+      <div className="about-container" style={{ display: 'flex', width: '100%' }}>
+        <div className="left-about" style={{ flex: '2', paddingRight: '2rem' }}>
           <h4>Get to Know me</h4>
           <p>
-            I am currently a senior at Rensselaer Polytechnic Institute, working towards a B.S. in Computer Science with a concentration in Artificial Intelligence. Additionally, I'm pursuing minors in Cognitive Science and Business Management & Entrepreneurship. <br /> <br />
-            While studying at Rensselear Polytechnic Institute I have had extensive experience with multiple coding languages,
-            the most prominent including Python, C, C++, Java, JavaScript, Swift, SQL, HTML, CSS and jQuery.
-            I have also gained extensive knowledge on how to write extremely efficient algorithms and which data structures are best for each situation.
-            My studies and extracurricular projects have made me very skilled at debugging, writing clean
-            and efficient code, as well as picking up new languages very quickly and understanding code that I have never seen before.
+            I am a 23-year-old recent graduate of Rensselaer Polytechnic Institute, where I earned my B.S. in Computer Science with a minor in Business Management & Entrepreneurship. <br /> <br />
+            
+            Throughout my education and career, I've developed extensive experience with numerous programming languages and technologies, the most prominent including Python, C, C++, Java, JavaScript, React, React Native, Swift, SQL, HTML, and CSS. I've also gained deep knowledge in designing efficient algorithms and selecting optimal data structures for various situations. <br /> <br />
+            
+            College was a transformative wake-up call that taught me the true meaning of hard work and dedication. During my final year at RPI, I managed a full course load while working a hybrid software developer/business analyst position at a large biopharma company and simultaneously leading a development team for a startup. This demanding schedule required me to rethink my priorities and commit to 60-80 hour work weeks to achieve my goals. After graduation, I continued this pace, balancing my full-time position while pursuing multiple startup ventures and contracting roles. Through this intense period, I developed a genuine appreciation for "the grind" and now find fulfillment in my work despite the rigorous schedule of 6-7 day work weeks and 10+ hour days. This experience has shown me that when you're passionate about what you do, even the most demanding challenges become rewarding opportunities for growth.
           </p>
         </div>
-        <div className="right-about">
+        <div className="right-about" style={{ flex: '1' }}>
+          <div className="about-item">
+            <div className="abt-text">
+              <p className="large-text">10+</p>
+              <p className="small-text">Fullstack Web & Mobile Apps <br /> Developed</p>
+            </div>
+          </div>
+          <div className="about-item">
+            <div className="abt-text">
+              <p className="large-text">15,000+</p>
+              <p className="small-text">Users Across <br /> All Projects</p>
+            </div>
+          </div>
           <div className="about-item">
             <div className="abt-text">
               <p className="large-text">25+</p>
@@ -27,20 +38,8 @@ function About() {
           </div>
           <div className="about-item">
             <div className="abt-text">
-              <p className="large-text">5+</p>
+              <p className="large-text">7+</p>
               <p className="small-text">Years of <br /> Coding Education</p>
-            </div>
-          </div>
-          <div className="about-item">
-            <div className="abt-text">
-              <p className="large-text">5+</p>
-              <p className="small-text">Fullstack Mobile Apps <br /> Developed</p>
-            </div>
-          </div>
-          <div className="about-item">
-            <div className="abt-text">
-              <p className="large-text">2+</p>
-              <p className="small-text">Years of Relevant <br /> Work Experience</p>
             </div>
           </div>
         </div>
