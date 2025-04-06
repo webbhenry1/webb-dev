@@ -24,9 +24,17 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Henry Webb | Portfolio</title>
+    <style>
+      /* Initial style to prevent flash of unstyled content */
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #191d2b;
+      }
+    </style>
   </head>
-  <body>
+  <body class="preload">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -39,5 +47,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      // Remove preload class after page loads to enable transitions
+      window.addEventListener('load', function() {
+        // Short delay to ensure content is rendered before enabling transitions
+        setTimeout(function() {
+          document.body.classList.remove('preload');
+        }, 300);
+      });
+    </script>
   </body>
 </html>

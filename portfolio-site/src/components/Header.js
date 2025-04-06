@@ -4,7 +4,7 @@ import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
   return (
-    <header className="container header active" id="home">
+    <header className="container header active fullscreen-section" id="home">
       <div className="header-content">
         <div className="left-header">
           <div className="h-shape"></div>
