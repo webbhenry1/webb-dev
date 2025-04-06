@@ -7,36 +7,73 @@ function Navigation() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
-    // Initialize the active section to 'home' on page load
+    // Start with home section as active
     setActiveSection('home');
     
-    const handleScroll = () => {
-      const sections = document.querySelectorAll('section, header');
-      let currentSection = 'home';
-      let minDistance = Infinity;
-
-      sections.forEach(section => {
-        // Calculate how far the section is from being at the top of the viewport
-        const sectionTop = section.getBoundingClientRect().top;
-        const distance = Math.abs(sectionTop);
+    // Get all section elements that need to be observed
+    const sections = [
+      document.getElementById('home'),
+      document.getElementById('about'),
+      document.getElementById('portfolio'),
+      document.getElementById('contact')
+    ].filter(Boolean); // Remove any null elements
+    
+    // Track which sections are in view and their visibility percentage
+    const sectionVisibility = {};
+    sections.forEach(section => {
+      sectionVisibility[section.id] = 0; // Initialize visibility
+    });
+    
+    // Create an intersection observer
+    const observer = new IntersectionObserver((entries) => {
+      // Update visibility data for each section
+      entries.forEach(entry => {
+        const id = entry.target.id;
+        const visiblePct = entry.intersectionRatio;
+        sectionVisibility[id] = visiblePct;
         
-        // If this section is closer to the top of the viewport than any we've seen so far,
-        // and at least part of it is visible on screen, make it the current section
-        if (distance < minDistance && (sectionTop < window.innerHeight / 2)) {
-          minDistance = distance;
-          currentSection = section.id || 'home';
+        console.log(`Section ${id}: ${Math.round(visiblePct * 100)}% visible`);
+      });
+      
+      // Determine the most visible section (highest intersection ratio)
+      let maxSection = 'home';
+      let maxVisibility = 0;
+      
+      Object.entries(sectionVisibility).forEach(([section, visibility]) => {
+        if (visibility > maxVisibility) {
+          maxVisibility = visibility;
+          maxSection = section;
         }
       });
-
-      setActiveSection(currentSection);
-    };
-
-    // Run the handleScroll function once on mount to set initial active section
-    handleScroll();
+      
+      // Special case for home section: make it active when at top of page
+      if (window.scrollY < 100 && sectionVisibility['home'] > 0) {
+        maxSection = 'home';
+      }
+      
+      // Only update if we have a section with some visibility
+      if (maxVisibility > 0 && maxSection !== activeSection) {
+        console.log(`Changing active section to: ${maxSection}`);
+        setActiveSection(maxSection);
+      }
+    }, {
+      // Set threshold array for more granular visibility detection
+      threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+      rootMargin: '-5% 0px -5% 0px' // Make detection area closer to actual viewport
+    });
     
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    // Start observing each section
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+    
+    // Cleanup observer on component unmount
+    return () => {
+      sections.forEach(section => {
+        observer.unobserve(section);
+      });
+    };
+  }, []); // Empty dependency array - only run once on mount
 
   const toggleTheme = () => {
     document.body.classList.toggle('light-mode');
