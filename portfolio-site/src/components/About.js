@@ -24,7 +24,7 @@ function About() {
           </div>
           <div className="about-item" style={{ padding: '3rem 1rem 0.75rem 1rem' }}>
             <div className="abt-text">
-              <p className="large-text" style={{ fontSize: '3.5rem', lineHeight: '0.9' }}>15,000+</p>
+              <p className="large-text" style={{ fontSize: '3.5rem', lineHeight: '0.9' }}>7500+</p>
               <p className="small-text" style={{ fontSize: '1.2rem', marginTop: '0.5rem' }}>Users Across <br /> All Projects</p>
             </div>
           </div>
