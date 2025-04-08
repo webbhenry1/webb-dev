@@ -66,7 +66,7 @@ body {
 }
 
 section {
-  min-height: 100vh;
+  min-height: fit-content;
   width: 100%;
   padding: 3rem 18rem;
 }
@@ -466,11 +466,43 @@ section {
 /* Contact */
 .contact-content-con {
   display: flex;
-  padding-inline: 4rem;
+  padding: 0 4rem;
+  margin: 0;
 }
+
+.contact-container {
+  padding: 0;
+  margin: 0;
+  min-height: auto;
+}
+
+section.contact {
+  min-height: auto;
+  height: auto;
+  padding-bottom: 0;
+}
+
+.main-title {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
 .contact-content-con .left-contact {
   flex: 2;
+  padding: 0;
+  margin: 0;
 }
+
+.contact-content-con .left-contact .contact-info {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.contact-content-con .left-contact .contact-info .contact-item:last-child {
+  margin-bottom: 0;
+}
+
 .contact-content-con .left-contact h4 {
   margin-top: 1rem;
   font-size: 3rem;
@@ -478,62 +510,35 @@ section {
   color: var(--color-secondary);
 }
 .contact-content-con .left-contact h7 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   text-transform: uppercase;
-  line-height: 5.5rem;
+  line-height: 2rem;
   color: var(--color-secondary);
+  margin-left: 1rem;
 }
 .contact-content-con .left-contact p {
-  margin: 2rem 0;
+  margin: 1rem 0;
   text-transform: uppercase;
-  line-height: 5.5rem;
+  line-height: 2rem;
   font-size: 2rem;
 }
 .contact-content-con .left-contact .contact-info .contact-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.contact-content-con .left-contact .contact-info .contact-item .icon {
+  display: flex;
+  align-items: center;
+}
+.contact-content-con .left-contact .contact-info .contact-item .icon svg {
+  font-size: 2.5rem;
+  color: var(--color-white);
 }
 .contact-content-con .left-contact .contact-info .contact-item p {
   margin: 0.3rem 0 !important;
   padding: 0 !important;
-}
-.contact-content-con .left-contact .contact-info .contact-item .icon {
-  display: grid;
-  grid-template-columns: 40px 1fr;
-}
-.contact-content-con .left-contact .contact-info .contact-item .icon i {
-  display: flex;
-  align-items: center;
-  font-size: 2rem;
-}
-.contact-content-con .left-contact .contact-icon {
-  display: flex;
-  margin-top: 2rem;
-}
-.contact-content-con .left-contact .contact-icon a {
-  display: flex;
-  align-items: center;
-  color: var(--color-white);
-  background-color: var(--color-grey-5);
-  cursor: pointer;
-  justify-content: center;
-  width: 5rem;
-  height: 5Rem;
-  border-radius: 50%;
-  margin: 0 0.4rem;
-  transition: all 0.4s ease-in-out;
-}
-.contact-content-con .left-contact .contact-icon a:hover {
-  background-color: var(--color-secondary);
-}
-.contact-content-con .left-contact .contact-icon a:hover i {
-  color: var(--color-primary);
-}
-.contact-content-con .left-contact .contact-icon a i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 2rem;
 }
 .contact-content-con .right-contact {
@@ -615,9 +620,6 @@ section {
   transition: all 0.4s ease-out;
 }
 
-.main-title {
-  text-align: center;
-}
 .main-title h2 {
   position: relative;
   text-transform: uppercase;

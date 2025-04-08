@@ -24,10 +24,10 @@ function Header() {
           <p>
             From architecting enterprise solutions at industry giants to driving innovation at dynamic startups, I've cultivated a unique blend of technical expertise and strategic leadership. My journey spans full-stack development, product management, and business analysis, allowing me to bridge the gap between technical execution and business strategy. This multifaceted experience, combined with my relentless drive for excellence, enables me to not just build solutions, but to shape the future of technology initiatives from conception to delivery.
           </p>    
-          <a href={require("../assets/img/Resume.pdf")} className="main-btn">
+          {/* <a href={require("../assets/img/Resume.pdf")} className="main-btn">
             <span className="btn-text">View My Resume</span>
             <span className="btn-icon"><FontAwesomeIcon icon={faNewspaper} /></span>
-          </a>
+          </a> */}
         </div>
       </div>
     </header>
