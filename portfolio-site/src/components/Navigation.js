@@ -26,6 +26,15 @@ function Navigation() {
     
     // Create an intersection observer
     const observer = new IntersectionObserver((entries) => {
+      // Prioritize Home section if scrolled near the top
+      if (window.scrollY < 100) {
+        if (activeSection !== 'home') {
+          console.log('Forcing active section to: home (near top)');
+          setActiveSection('home');
+        }
+        return; // Exit early, don't check other sections
+      }
+
       // Update visibility data for each section
       entries.forEach(entry => {
         const id = entry.target.id;
@@ -46,12 +55,7 @@ function Navigation() {
         }
       });
       
-      // Special case for home section: make it active when at top of page
-      if (window.scrollY < 100 && sectionVisibility['home'] > 0) {
-        maxSection = 'home';
-      }
-      
-      // Only update if we have a section with some visibility
+      // Only update if we have a section with some visibility and it's different
       if (maxVisibility > 0 && maxSection !== activeSection) {
         console.log(`Changing active section to: ${maxSection}`);
         setActiveSection(maxSection);
