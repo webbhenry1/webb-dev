@@ -1,1 +1,77 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>Henry Webb | Portfolio</title><style>body,html{margin:0;padding:0;background-color:#191d2b}</style><script defer="defer" src="/static/js/main.96997f06.js"></script><link href="/static/css/main.c0ffd4f0.css" rel="stylesheet"></head><body class="preload"><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>window.addEventListener("load",(function(){setTimeout((function(){document.body.classList.remove("preload")}),300)}))</script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><link rel="icon" href="/favicon.ico"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#000000"/><meta name="description" content="Web site created using create-react-app"/><link rel="apple-touch-icon" href="/logo192.png"/><link rel="manifest" href="/manifest.json"/><title>Henry Webb | Portfolio</title><style>body,html{margin:0;padding:0;background-color:#191d2b}</style><script defer="defer" src="/static/js/main.96997f06.js"></script><link href="/static/css/main.c0ffd4f0.css" rel="stylesheet"></head><body class="preload"><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script>window.addEventListener("load",(function(){setTimeout((function(){document.body.classList.remove("preload")}),300)}))</script>
+<script>
+// Fix for navigation active state to prioritize Home section
+document.addEventListener('DOMContentLoaded', function() {
+  // Give the main app time to initialize
+  setTimeout(function() {
+    const controlButtons = document.querySelectorAll('.controls .control');
+    const homeButton = document.querySelector('.controls .control:first-child');
+    const sections = {
+      home: document.getElementById('home'),
+      about: document.getElementById('about'),
+      portfolio: document.getElementById('portfolio'),
+      contact: document.getElementById('contact')
+    };
+    
+    // Function to update active button
+    function updateActiveButton() {
+      // Default to removing active state from all buttons
+      controlButtons.forEach(btn => btn.classList.remove('active-btn'));
+      
+      // Special case: if at top of page, highlight home button
+      if (window.scrollY < 100) {
+        homeButton.classList.add('active-btn');
+        return;
+      }
+      
+      // Determine which section is most visible
+      const viewportHeight = window.innerHeight;
+      let maxVisibleSection = null;
+      let maxVisibleAmount = 0;
+      
+      Object.entries(sections).forEach(([id, section]) => {
+        if (!section) return;
+        
+        const rect = section.getBoundingClientRect();
+        const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+        const visiblePercent = visibleHeight / section.offsetHeight;
+        
+        if (visiblePercent > maxVisibleAmount) {
+          maxVisibleAmount = visiblePercent;
+          maxVisibleSection = id;
+        }
+      });
+      
+      // If we found a visible section, highlight its button
+      if (maxVisibleSection) {
+        const index = ['home', 'about', 'portfolio', 'contact'].indexOf(maxVisibleSection);
+        if (index >= 0 && index < controlButtons.length) {
+          controlButtons[index].classList.add('active-btn');
+        }
+      }
+    }
+    
+    // Update active button on scroll
+    window.addEventListener('scroll', updateActiveButton);
+    
+    // Update it immediately too
+    updateActiveButton();
+    
+    // Make sure buttons work properly
+    controlButtons.forEach((button, index) => {
+      const sectionIds = ['home', 'about', 'portfolio', 'contact'];
+      button.addEventListener('click', function() {
+        const targetSection = document.getElementById(sectionIds[index]);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+          
+          // Manually update active state immediately when clicked
+          controlButtons.forEach(btn => btn.classList.remove('active-btn'));
+          button.classList.add('active-btn');
+        }
+      });
+    });
+  }, 500);
+});
+</script>
+</body></html>
